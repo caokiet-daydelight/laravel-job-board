@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use \App\Models\Job;
 
 return new class extends Migration {
     /**
@@ -16,8 +17,8 @@ return new class extends Migration {
             $table->text('description');
             $table->unsignedInteger('salary');
             $table->string('location');
-            $table->enum('category', \App\Models\Job::$availableCategories);
-            $table->enum('experience', \App\Models\Job::$availableExperiences);
+            $table->enum('category', Job::$availableCategories);
+            $table->enum('experience', Job::$availableExperiences);
             $table->timestamps();
         });
     }
