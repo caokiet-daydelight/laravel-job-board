@@ -25,9 +25,12 @@
                 </div>
             </div>
 
-            <p class="text-sm text-slate-500">
+            <p class="mb-4 text-sm text-slate-500">
                 {!!nl2br(e($job->description))!!}
             </p>
+            <x-link-button href="{{ route('jobs.show', $job) }}">
+                Show
+            </x-link-button>
         </x-card>
     @endforeach
 </x-layout>
